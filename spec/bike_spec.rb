@@ -5,4 +5,11 @@ describe Bike do
     bike = Bike.new
     expect(bike.broken?).to eq false 
   end
+
+  it 'should have the ability to break' do
+    bike = Bike.new
+    bike.break!
+    expect(bike.broken?).to eq true
+  end
+
 end
