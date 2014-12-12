@@ -8,9 +8,15 @@ class DockingStation
 		@bikes.count
 	end
 
-	def dock(banana)
-		@bikes << banana		
+	def dock(bike)
+		@bikes << bike		
 	end
 
+	def release(bike)
+		@bikes.delete(bike)
+	end
 
 end
+
+p DockingStation.new(capacity: 100)
+p DockingStation.new
