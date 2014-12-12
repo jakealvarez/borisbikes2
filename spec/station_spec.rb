@@ -1,7 +1,7 @@
 require 'station'
 describe DockingStation do 
 let(:bike) {Bike.new}
-let(:station) {DockingStation.new}
+let(:station) {DockingStation.new(capacity: 20)}
 
 	it 'should accept a bike' do 
 		bike = Bike.new
@@ -18,10 +18,7 @@ let(:station) {DockingStation.new}
 
 	it 'should know when it\'s full' do
 		expect(station).not_to be_full
-		max_capacity = 50
-		max_capacity.times do 
-			station.dock(Bike.new)
-		end
+		20.times {station.dock(Bike.new)}
 		expect(station).to be_full
 	end
 
